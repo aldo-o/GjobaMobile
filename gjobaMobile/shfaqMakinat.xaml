@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="gjobaMobile.shfaqMakinat"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gjobaMobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" Loaded="Page_Loaded">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="GJOBA MOBILE" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Makinat" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <ListBox Background="Transparent" Margin="6" Height="auto" BorderThickness="2" MaxHeight="580" Grid.Row="1" x:Name="listBoxobj" SelectionChanged="listBoxobj_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Width="350" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="5,0,0,0" Grid.Row="0" x:Name="NameTxt" TextWrapping="Wrap" Text="{Binding sqMakina}" FontSize="28" Foreground="White"/>
+                                    <TextBlock Margin="5,0,0,0" Grid.Row="1" x:Name="PhoneTxt"  TextWrapping="Wrap" Foreground="White" FontSize="18" Text="{Binding sqTarga}" />
+                                    <TextBlock HorizontalAlignment="Right" Margin="0,0,35,0" Grid.Row="3" x:Name="CreateddateTxt" Foreground="White" FontSize="18" TextWrapping="Wrap" Text="{Binding sqShasia}" />
+                                </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Pas" Icon="Back" Click="pas_Click"/>
+            <AppBarButton Label="Pas" Icon="Add" Click="shto_Click"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Rreth Aplikacionit" Icon="Help" Click="rreth_Click"/>
+                <AppBarButton Label="Kontakto" Icon="Help" Click="kontakt_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>

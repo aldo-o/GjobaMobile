@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="gjobaMobile.BasicPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:gjobaMobile"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <TextBlock Text="GJOBA MOBILE" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="Kërko" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}" FontSize="57.5"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Targa" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="targa" HorizontalAlignment="Stretch" Margin="10,44,5,0" TextWrapping="Wrap" VerticalAlignment="Top" KeyDown="keyDown"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" Text="Shasia" VerticalAlignment="Top" FontSize="24"/>
+            <TextBox x:Name="shasia" HorizontalAlignment="Stretch" Margin="10,148,5,0" TextWrapping="Wrap" VerticalAlignment="Top" KeyDown="keyDown"/>
+            <Button x:Name="kontrollo" Content="kontollo" HorizontalAlignment="Left" Margin="243,222,0,0" VerticalAlignment="Top" Click="kontrollo_Click" Visibility="Collapsed"/>
+            <Button Content="pastro" HorizontalAlignment="Stretch" Margin="117,222,0,0" VerticalAlignment="Top" Click="Button_Click" Visibility="Collapsed"/>
+            <ProgressRing x:Name="pr" />
+
+        </Grid>
+    </Grid>
+    <Page.BottomAppBar>
+        <CommandBar>
+            <AppBarButton Label="Kontrollo" Icon="Page" Click="kontrollo_Click"/>
+            <AppBarButton Label="Shto" Icon="Add" Click="Shto_Click"/>
+            <AppBarButton Label="Pastro" Icon="Clear" Click="Button_Click"/>
+            <AppBarButton Label="Makinat" Icon="List" Click="liste_Click"/>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Rreth Aplikacionit" Icon="Help" Click="rreth_Click"/>
+                <AppBarButton Label="Kontakto" Icon="Help" Click="kontakt_Click"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.BottomAppBar>
+</Page>
